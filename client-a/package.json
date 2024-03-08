@@ -1,0 +1,10 @@
+{
+  "name": "client-b",
+  "version": "1.0.0",
+  "description": "Javascript Client for shared file synchronization",
+  "main": "index.js",
+  "scripts": {
+    "test": "test/index.js"
+  },
+  "author": "Sylvain Nicolle"
+}
