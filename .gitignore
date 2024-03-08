@@ -1,0 +1,6 @@
+.DS_Store
+.idea/
+box/
+# Server build
+server/server
+__pycache__
