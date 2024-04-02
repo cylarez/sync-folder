@@ -9,7 +9,7 @@ Build a command line file sync utility for Linux with a server and two separate 
 ### Main design
 
 
-Client prepare the list of local files in his possession, calls the `/sync` API.
+Client prepare the list of local files in his possession, calls the `/sync` API (Server-Sent Events)
 
 
 Server blocks the request and push events (partial response to the blocked `/sync` request) to inform clients about necessary updates (what to download and what to upload). 
@@ -37,7 +37,7 @@ The concurrency features in Golang (goroutine, channel, mutex) would be very use
 
 SSE will be used to push events to connected clients. Other solutions (WebSocket, gRPC) require libraries, moreover we only need one connection established between client/ server for the server to be able to push updates. Other requests (download and upload files can be regular HTTP requests)
 
-Like WebSocket, SSE is using HTTP 1.1 but is less complex to implement.
+Like WebSocket, SSE is using HTTP 1.1 but is less complex to implement from scratch.
 
 ### Data interchange format: JSON
 Will allow to share basic structure in every languages without using any libraries.
